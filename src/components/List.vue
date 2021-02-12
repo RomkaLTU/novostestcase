@@ -1,11 +1,13 @@
 <template>
     <div>
-        <div><input type="text"></div>
         <div>
-            <ul class="list">
+            <input type="search" placeholder="Start typing..." class="p-1 text-sm border border-gray-200 w-full">
+        </div>
+        <div class="border border-gray-200 mt-4 min-h-200px p-1">
+            <ul class="list flex flex-col space-y-1">
                 <li
-                    class="list-item"
-                    :class="{active:selected_items.includes(item)}"
+                    class="list-item text-left bg-gray-200 hover:bg-gray-300 p-1 text-sm cursor-pointer"
+                    :class="{'bg-gray-300':selected_items.includes(item)}"
                     @click="toggleItem(item)"
                     v-for="(item,index) in items"
                     :key="`index_${index}`">{{ item }}</li>
@@ -55,22 +57,3 @@ export default {
     },
 }
 </script>
-
-<style lang="scss" scoped>
-.list {
-    list-style-type: none;
-
-    &-item {
-        background-color: azure;
-        margin-bottom: 0.5rem;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &.active {
-            background-color: blueviolet;
-        }
-    }
-}
-</style>

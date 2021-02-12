@@ -11,6 +11,8 @@ export default new Vuex.Store({
       'Item 2',
       'Item 3',
       'Item 4',
+      'Item 5',
+      'Item 6',
     ],
     list_b: [],
     selected_a: [],

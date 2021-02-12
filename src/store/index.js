@@ -28,7 +28,7 @@ export default new Vuex.Store({
     },
     moveAllFromB(state) {
       if(state.list_b.length) {
-        state.list_a = state.list_b;
+        state.list_a = [...state.list_a, ...state.list_b];
         EventBus.$emit('items-moved');
         state.list_b = [];
       }
